@@ -1,0 +1,31 @@
+{% extends "base.html" %}
+{% block content %}
+
+<div class="brand">
+  <img src="{{ url_for('static', filename='logo.png') }}" alt="JDash logo" class="logo">
+  <h1>JDash Portal</h1>
+  <p class="tagline">Sign in to manage your apps.</p>
+</div>
+
+<form method="POST" class="auth-form">
+  {{ form.hidden_tag() }}
+
+  <div class="field">
+    <label>Email</label>
+    {{ form.email(size=32, placeholder="you@example.com") }}
+  </div>
+
+  <div class="field">
+    <label>Password</label>
+    {{ form.password(placeholder="••••••••") }}
+  </div>
+
+  {{ form.submit() }}
+
+  <p class="muted">
+    New here?
+    <a href="{{ url_for('signup') }}">Create an account</a>
+  </p>
+</form>
+
+{% endblock %}

@@ -1,0 +1,10 @@
+{% extends "base.html" %}
+{% block content %}
+<h1>Dashboard</h1>
+<p class="muted">
+  Signed in as <strong>{{ email }}</strong>
+</p>
+<form method="POST" action="{{ url_for('logout') }}">
+  <button type="submit">Log out</button>
+</form>
+{% endblock %}
